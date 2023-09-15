@@ -65,7 +65,7 @@ if [ ! -f "${MODCFGDIR}/i915-sriov.conf" ]; then
   mkdir -p ${MODCFGDIR}
   echo "# disable autoload old i915 module on boot
   blacklist i915 
-  options i915 enable_guc=7" > ${MODCFGDIR}/i915-sriov.conf
+  options i915.enable_guc=3 i915.max_vfs=7" > ${MODCFGDIR}/i915-sriov.conf
 fi
 
 mkdir -p &plugindir;
@@ -175,7 +175,7 @@ install() {
 
 enable_module() {
   VF_NUM="$(cat &plugindir;/&name;.cfg | grep "vfnumber=" | cut -d '=' -f2 | sed "s/\"//g")"
-  modprobe i915 enable_guc=7
+  modprobe i915.enable_guc=3 i915.max_vfs=7
   sleep 2
   if [ -f "/sys/devices/pci0000:00/0000:00:02.0/sriov_numvfs" ]; then
     echo ${VF_NUM} &gt; /sys/devices/pci0000:00/0000:00:02.0/sriov_numvfs 
