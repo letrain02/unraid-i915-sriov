@@ -46,7 +46,7 @@ URVER="$1"
 #CHANNEL="stable"
 #CHANNEL="test"
 #CHANNEL="next"
-CHANNEL="$2"
+CHANNEL="$1"
 URZIP="unRAIDServer-${URVER}-x86_64.zip"
 read -p "Pack base on version ${URVER} in ${CHANNEL}"
 # The link is found from https://unraid.net/download
