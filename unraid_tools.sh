@@ -40,8 +40,8 @@ vercomp () {
 }
 
 download () {
-#URVER="6.11.5"
-#URVER="6.12.0-rc2"
+#URVER="6.12.4"
+#URVER="6.12.4-rc9"
 URVER="$1"
 #CHANNEL="stable"
 #CHANNEL="test"
