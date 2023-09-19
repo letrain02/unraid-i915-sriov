@@ -68,8 +68,7 @@ if [ ! -f "${MODCFGDIR}/i915-sriov.conf" ]; then
   # install config to modprobe.d/i915-sriov.conf
   mkdir -p ${MODCFGDIR}
   echo "# disable autoload old i915 module on boot
-  blacklist i915 
-  options i915.enable_guc=3 i915.max_vfs=7" > ${MODCFGDIR}/i915-sriov.conf
+  blacklist i915 > ${MODCFGDIR}/i915-sriov.conf
 fi
 
 mkdir -p &plugindir;
