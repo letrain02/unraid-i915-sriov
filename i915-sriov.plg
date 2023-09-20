@@ -178,7 +178,7 @@ install() {
 
 enable_module() {
   VF_NUM="$(cat &plugindir;/&name;.cfg | grep "vfnumber=" | cut -d '=' -f2 | sed "s/\"//g")"
-  modprobe i915.enable_guc=3 i915.max_vfs=7
+  modprobe i915 enable_guc=3 max_vfs=7
   sleep 2
   if [ -f "/sys/devices/pci0000:00/0000:00:02.0/sriov_numvfs" ]; then
     echo ${VF_NUM} &gt; /sys/devices/pci0000:00/0000:00:02.0/sriov_numvfs 
